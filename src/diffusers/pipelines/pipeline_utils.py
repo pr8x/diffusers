@@ -428,9 +428,7 @@ def load_sub_model(
             and loading_kwargs["variant"] is not None
             and transformers_version < version.parse("4.27.0")
         ):
-            raise ImportError(
-                f"When passing `variant='{variant}'`, please make sure to upgrade your `transformers` version to at least 4.27.0.dev0"
-            )
+
         elif is_transformers_model and loading_kwargs["variant"] is None:
             loading_kwargs.pop("variant")
 
